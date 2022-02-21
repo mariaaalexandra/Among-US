@@ -1,0 +1,115 @@
+Tema 4
+Drugă Maria-Alexandra
+GRUPA 313CB
+
+TASK1:
+
+În funcția RotateMatrix castez void pointerul la int pointer și valoarea o
+salvez în variabila n. Inițialiez cu pointerul NULL variabila buffer în care
+voi reține valorile matricei rotite. Inițializez cu 0 variabila nr pentru a
+calcula numărul de cifre ale lui n. Calculez cu ajutorul formulei nr_alloc,
+variabilă pe care o folosesc la alocare. Am creat formula astfel: am calculat
+numărul de carcatere ce se pot găsi pe un singur rând în funcție de numărul
+de cifre ale lui n și am înmulțit cu numărul de rânduri. Apoi realizez alocarea
+cu funcția malloc. Verific dacă alocarea a avut loc cu succes. În cazul în care
+nu s-a realizat alocarea cu succes apelez exit(1) și afișez un mesaj
+corespunzător. Parcurg cu ajutorul a două instrucțiuni for și adaug elemente în
+matrice cu ajutorul funcției sprintf. În final adaug sfârșitul de șir și
+returnez variabila buffer castată la void pointer.
+
+TASK2:
+
+În funcția DecodeString castez void pointerul la char pointer. În variabila
+buffer voi reține suma elementelor din șir. Aloc șirului de caractere 16
+octeți, multiplu de 4, pentru a mări eficiența și rapiditatea. Verific dacă
+alocarea a avut loc cu succes, dacă nu, apelez exit(1) și programul își va opri
+execuția. Apoi cu funcția strtok despart șirul de caractere pentru a calcula
+suma. Numărul adăugat în sumă, variabila nr, este obținută prin apelarea
+funcției strtol. În final adaug sum în buffer cu ajutorul funcției sprintf și
+returnez  variabila buffer castată la void pointer.
+
+TASK3:
+În funcția InvertArray castez void pointerul la int pointer. Realizez alocarea
+cu ajutorul funcției malloc și aloc șirului de caractere 16 octeți, multiplu
+de 4, pentru a mări rapiditatea și eficiența. Verific dacă alocarea a avut loc
+cu succes, iar în caz alternativ apelez exit(1) și programul își oprește
+execuția. Verfic dacă primul număr din șir este par sau impar. În cazul în care
+primul număr din vector este par, interschimb elementele de pe pozițiile 2k + 1
+cu elementele de pe pozițiile 2k + 2. În cazul în care nr este impar inversez
+vectorul. În final adaug elementele în buffer cu funcția sprintf și adaug
+sfârșitul de șir. Apoi returnez variabila buffer castată la void pointer.
+
+TASK4:
+În funcția allocPlayer voi aloca fiecare câmp din structura player. Inițial 
+aloc structura player. În continuare aloc câmpurile din structură: name, color,
+hat și inițializez întregul alive din structură cu 1. După fiecare alocare
+verific dacă aceasta s-a realizat cu succes, iar în caz alternativ apelez
+exit(1) și programul își oprește execuția.
+În funcția allocGame realizez alocarea pentru structură și câmpul name al
+acesteia.  După fiecare alocare verific dacă aceasta s-a realizat cu succes,
+iar în caz alternativ apelez exit(1) și programul își oprește execuția.
+
+TASK5:
+În funcția ReadPlayer apelez funcția de alocare allocPlayer. Aloc dinamic
+variabila role care reține rolul jucătorului ;i verifica dacă a avut loc cu
+succes. Apoi citesc fiecare câmp din structură: name, color, hat și
+numberofLocations. Realizez alocarea dinamică pentru vectorul de structuri
+locations. Cu ajutorul unui for parcurg vectorul de locații și citesc fiecare
+coordonată. Mai apelez de două ori funcția fgetc pentru a citi ultima paranteza
+și endline. Ulterior, verific ce rol are jucătorul cu ajutorul celei de-a doua
+litere și îi setez abilitatea. În final realizez dezalocarea pentru variabila
+role.
+În funcția ReadGame apelez funcția de alocare allocGame. Apoi citesc fiecare
+câmp din structură. Realizez alocarea dinamică pentru vectorul de pointeri la
+structuri și verific dacă s-a realizat cu succes. În continuare parcurg cu
+ajutorul unui for numărul de jucători și apelez funcția de citire pentru fiecare
+jucător și pentru impostor.
+
+TASK6:
+În funcția WritePlayer variabila role retine sirul de caractere ce contine 
+rolul jucatorului. Apoi afișez fiecare câmp din structură în formatul dorit.
+Pentru fiecare jucător afișez locațiile acestuia și dezaloc sirul de caractere
+role.
+În funcția WriteGame afișez fiecare câmp din structură conform formatului cerut.
+Pentru fiecare jucător apelez funcția de afișare. În final apelez funcția de
+afișare pentru impostor.
+
+TASK7:
+În funcția KillPlayer declar un pointer de tip game care preia valoarea castată
+la game pointer de input. În variabila întreagă Min rețin valoarea minimă a
+distanței dintre jucător și impostor, variabilă pe care o inițializez cu
+distanța dintre primul jucător și impostor. Inițializez cu -1 poziția
+jucătorului. Parcurg cu un for jucătorii și calculez distanța dintre locația
+lor și impostor. Verific dacă distanța este mai mică sau egală cu KillPlayer
+și dacă jucătorul este în viață. În acest caz verific dacă distanța este mai
+mică sau egală cu Min, actualizez variabila Min și rețin numele împreună cu
+indexul. În final prin instrucțiunea if verific dacă indexul a rămas -1, caz
+în care impostorul nu a omorât pe nimeni. Cu ajutorul funcției sprintf adaug
+în șirul de caractere output mesajul cerut. În cazul în care impostorul reușește
+să omoare vreun jucător, atunci în șirul de caractere output adaug mesajul
+dorit împreună cu numele jucătorului. Totodată setez valoarea variabilei
+întregi alive a jucătorului omorât cu 0. Apoi returnez variabila output castată
+la void pointer.
+
+TASK8:
+În funcția CalculateNextCycleOfGame declar două variabile char pointer: buffer,
+care reține numele jucătorului, și out, care reține output-ul fiecărui jucător.
+Aloc dinamic șirul de caractere buffer și verific dacă alocarea a avut loc cu
+succes. Apoi, cu ajutorul unui for parcurg jucătorii și verific dacă sunt în
+viață. Dacă un jucător este mort, voi afișa un mesaj corespunzător, specificând
+numele acestuia. În caz contrar, verific dacă jucătorul a ajuns la locația
+finală și o resetez cu 0; altfel, măresc indexul. În continuare afișez 
+locația și output-ul fiecărui jucător. După ieșirea din for verific dacă
+impostorul a ajuns în poziția finală și îi resetez valoarea indicelui,
+precum în cazul jucătorului. Afișez locația impostorului împreună cu numele
+acestuia și outputul corespunzător. Realizez dezalocarea sirurilor de caractere
+out și buffer.
+
+TASK9:
+În funcția FreePlayer dezaloc fiecare câmp din structura player: name, color,
+hat și vectorul de structuri de tip Location. La final dezaloc structura
+player.
+În funcția FreeGame dezaloc fiecare camp din structura game. Parcurg fiecare
+jucător și apelez funcția FreePlayer pentru fiecare dintre ei. Dezaloc vectorul
+de pointeri la structuri de tip Player. Apelez funcția FreePlayer inclusiv
+pentru impostor. În final dezaloc structura game.
